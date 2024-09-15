@@ -23,6 +23,14 @@ pipeline{
             }
         }
 
+        // Stage3 : Publish artifact to Nexus
+        stage ('Publish to Nexus'){
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'KKDevOpsLab', classifier: '', file: 'target/KKDevOpsLab-0.0.2-SNAPSHOT.war', type: 'war']], credentialsId: '', groupId: 'com.kkdevopslab', nexusUrl: '172.20.10.97:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'KKDevOpsLabs-SNAPSHOT', version: '0.0.2-SNAPSHOT'
+
+            }
+        }
+
         // Stage3 : Publish the source code to Sonarqube
         stage ('Sonarqube Analysis'){
             steps {
