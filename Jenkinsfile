@@ -26,7 +26,7 @@ pipeline{
         // Stage3 : Publish artifact to Nexus
         stage ('Publish to Nexus'){
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'KKDevOpsLab', classifier: '', file: 'target/KKDevOpsLab-0.0.2-SNAPSHOT.war', type: 'war']], credentialsId: '3080e56e-97f6-4062-8d02-e63b20ac1dd7', groupId: 'com.kkdevopslab', nexusUrl: '172.20.10.97:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'KKDevOpsLabs-SNAPSHOT', version: '0.0.2-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'KKDevOpsLab', classifier: '', file: 'target/KKDevOpsLab-0.0.2-SNAPSHOT.war', type: 'war']], credentialsId: '7bbe7b2f-add6-41ba-a7ff-8ac739e8ff38', groupId: 'com.kkdevopslab', nexusUrl: '172.20.10.94:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'KKDevOpsLabs-SNAPSHOT', version: '0.0.2-SNAPSHOT'
 
             }
         }
