@@ -37,7 +37,7 @@ pipeline{
                 nexusArtifactUploader artifacts: 
                 [[artifactId: 'KKDevOpsLab', 
                 classifier: '', 
-                file: 'target/KKDevOpsLab-0.0.2-SNAPSHOT.war', 
+                file: 'target/KKDevOpsLab-0.0.3-SNAPSHOT.war', 
                 type: 'war']], 
                 credentialsId: '7bbe7b2f-add6-41ba-a7ff-8ac739e8ff38', 
                 groupId: 'com.kkdevopslab', 
