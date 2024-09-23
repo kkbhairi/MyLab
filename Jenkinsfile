@@ -35,17 +35,17 @@ pipeline{
         stage ('Publish to Nexus'){
             steps {
                 nexusArtifactUploader artifacts: 
-                [[artifactId: 'KKDevOpsLab', 
+                [[artifactId: '${ArtifactId}', 
                 classifier: '', 
-                file: 'target/KKDevOpsLab-0.0.3-SNAPSHOT.war', 
+                file: 'target/${ArtifactId}-${Version}.war', 
                 type: 'war']], 
                 credentialsId: '7bbe7b2f-add6-41ba-a7ff-8ac739e8ff38', 
-                groupId: 'com.kkdevopslab', 
+                groupId: '${GroupId}', 
                 nexusUrl: '172.20.10.94:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'KKDevOpsLabs-SNAPSHOT', 
-                version: '0.0.3-SNAPSHOT'
+                version: '${Version}'
 
             }
         }
@@ -55,7 +55,7 @@ pipeline{
             steps {
                 echo "Artifact ID is '${ArtifactId}'"
                 echo "Version is '${Version}'"
-                echo "Name os '${Name}'"
+                echo "Name is '${Name}'"
                 echo "Group ID is '${GroupId}'"
             }
         }
