@@ -35,17 +35,17 @@ pipeline{
         stage ('Publish to Nexus'){
             steps {
                 nexusArtifactUploader artifacts: 
-                [[artifactId: '${ArtifactId}', 
+                [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: 'target/${ArtifactId}-${Version}.war', 
+                file: "target/${ArtifactId}-${Version}.war", 
                 type: 'war']], 
                 credentialsId: '7bbe7b2f-add6-41ba-a7ff-8ac739e8ff38', 
-                groupId: '${GroupId}', 
+                groupId: "${GroupId}", 
                 nexusUrl: '172.20.10.94:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'KKDevOpsLabs-SNAPSHOT', 
-                version: '${Version}'
+                version: "${Version}"
 
             }
         }
