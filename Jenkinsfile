@@ -35,8 +35,9 @@ pipeline{
         stage ('Publish to Nexus'){
             steps {
                 script {
-                    def NexusRepo = Version.endsWith("SNAPSHOT") ? "KKDevOpsLabs-SNAPSHOT" : "KKDevOpsLabs-RELEASE"
-                }
+                    
+                def NexusRepo = Version.endsWith("SNAPSHOT") ? "KKDevOpsLabs-SNAPSHOT" : "KKDevOpsLabs-RELEASE"
+                
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
@@ -49,6 +50,8 @@ pipeline{
                 protocol: 'http', 
                 repository: "${NexusRepo}", 
                 version: "${Version}"
+
+                }
 
             }
         }
