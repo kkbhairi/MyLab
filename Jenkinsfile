@@ -86,13 +86,7 @@ pipeline{
                     verbose: false)
                 ])
                 
-                } 
-
             }
-        } 
-
-        
-        
-    }
-
+        }
+    } 
 }
