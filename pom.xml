@@ -4,7 +4,7 @@
   <groupId>com.kkdevopslab</groupId>
   <artifactId>KKDevOpsLab</artifactId>
   <packaging>war</packaging>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
   <name>KKDevOpsLab</name>
   <url>http://maven.apache.org</url>
   <dependencies>
